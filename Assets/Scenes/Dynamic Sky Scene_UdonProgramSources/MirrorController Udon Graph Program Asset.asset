@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f11136daadff0b44ac2278a314682ab, type: 3}
+  m_Name: MirrorController Udon Graph Program Asset
+  m_EditorClassIdentifier: 
+  serializedUdonProgramAsset: {fileID: 11400000, guid: 901b2d7d7549fa14787586848e9a93ba,
+    type: 2}
+  udonAssembly: ".data_start\r\n\r\n    .export MirrorObject\r\n    .export SoundManager\r\n   
+    \r\n    __instance_0: %UnityEngineGameObject, this\r\n    __value_0: %SystemBoolean,
+    null\r\n    __Boolean_0: %SystemBoolean, null\r\n    __instance_1: %UnityEngineGameObject,
+    this\r\n    __instance_2: %VRCUdonUdonBehaviour, this\r\n    __eventName_0: %SystemString,
+    null\r\n    __String_0: %SystemString, null\r\n    MirrorObject: %UnityEngineGameObject,
+    this\r\n    SoundManager: %VRCUdonUdonBehaviour, this\r\n\r\n.data_end\r\n\r\n.code_start\r\n\r\n   
+    .export ToggleMirror\r\n    \r\n    ToggleMirror:\r\n    \r\n        PUSH, MirrorObject\r\n       
+    PUSH, __instance_0\r\n        COPY\r\n        PUSH, MirrorObject\r\n        PUSH,
+    __instance_1\r\n        COPY\r\n        PUSH, __instance_1\r\n        PUSH, __Boolean_0\r\n       
+    EXTERN, \"UnityEngineGameObject.__get_activeInHierarchy__SystemBoolean\"\r\n       
+    PUSH, __Boolean_0\r\n        PUSH, __value_0\r\n        EXTERN, \"SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean\"\r\n       
+    PUSH, __instance_0\r\n        PUSH, __value_0\r\n        EXTERN, \"UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid\"\r\n       
+    PUSH, SoundManager\r\n        PUSH, __instance_2\r\n        COPY\r\n        PUSH,
+    __String_0\r\n        PUSH, __eventName_0\r\n        COPY\r\n        PUSH, __instance_2\r\n       
+    PUSH, __eventName_0\r\n        EXTERN, \"VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid\"\r\n       
+    JUMP, 0xFFFFFFFC\r\n    \r\n\r\n.code_end\r\n"
+  assemblyError: 
+  graphData:
+    name: 
+    description: 
+    nodes:
+    - fullName: Variable_UnityEngineGameObject
+      uid: b5c9dd7c-e3d3-45f7-a4e3-6a6fef6ffd2d
+      position: {x: 0, y: 0}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|MirrorObject
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
+    - fullName: Get_Variable
+      uid: 8ed214b8-2359-4f9d-ae9c-940295fecf4d
+      position: {x: -119.57982, y: 123.045425}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|b5c9dd7c-e3d3-45f7-a4e3-6a6fef6ffd2d
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Event_Custom
+      uid: f4e2d03c-f563-467c-b397-b51bf05dc8ec
+      position: {x: 150.1817, y: 22.182266}
+      nodeUIDs:
+      - 
+      flowUIDs:
+      - 381ca5fb-b706-4625-b45b-4ea76e27aa4c
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|ToggleMirror
+    - fullName: UnityEngineGameObject.__get_activeInHierarchy__SystemBoolean
+      uid: f1ff6615-333c-4ad2-9de1-e838d6d1bfb8
+      position: {x: 58.666046, y: 264.76862}
+      nodeUIDs:
+      - 8ed214b8-2359-4f9d-ae9c-940295fecf4d|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: UnityEngineGameObject.__SetActive__SystemBoolean__SystemVoid
+      uid: e44ceb6d-d919-4698-9bfd-23782cccc9ef
+      position: {x: 517, y: 124.83999}
+      nodeUIDs:
+      - 8ed214b8-2359-4f9d-ae9c-940295fecf4d|0
+      - 48e814dc-c39b-4c85-8e2b-d17290715a30|0
+      flowUIDs:
+      - 
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: SystemBoolean.__op_UnaryNegation__SystemBoolean__SystemBoolean
+      uid: 48e814dc-c39b-4c85-8e2b-d17290715a30
+      position: {x: 320.27045, y: 265}
+      nodeUIDs:
+      - f1ff6615-333c-4ad2-9de1-e838d6d1bfb8|0
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+    - fullName: Variable_VRCUdonCommonInterfacesIUdonEventReceiver
+      uid: f3c39b20-221e-4f8d-a79a-e6c93d00e88a
+      position: {x: -1613.2297, y: -330.84537}
+      nodeUIDs:
+      - 
+      - 
+      - 
+      - 
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|SoundManager
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|True
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+          PublicKeyToken=b77a5c561934e089|False
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|none
+    - fullName: Get_Variable
+      uid: fbc648eb-e2b2-4084-aea1-a9dce16f12e0
+      position: {x: 633.5045, y: 497.28183}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|f3c39b20-221e-4f8d-a79a-e6c93d00e88a
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Const_SystemString
+      uid: b94644ef-fb87-43f7-ba39-76eb067a0615
+      position: {x: 604.31305, y: 298.13965}
+      nodeUIDs:
+      - 
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|PlayPanel
+    - fullName: VRCUdonCommonInterfacesIUdonEventReceiver.__SendCustomEvent__SystemString__SystemVoid
+      uid: 39d1e3b4-78e9-47db-b763-3648054c126d
+      position: {x: 854.24335, y: 77.86939}
+      nodeUIDs:
+      - fbc648eb-e2b2-4084-aea1-a9dce16f12e0
+      - b94644ef-fb87-43f7-ba39-76eb067a0615
+      flowUIDs: []
+      nodeValues:
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+      - unityObjectValue: {fileID: 0}
+        stringValue: 
+    - fullName: Block
+      uid: 381ca5fb-b706-4625-b45b-4ea76e27aa4c
+      position: {x: 417.72562, y: -2.0616186}
+      nodeUIDs: []
+      flowUIDs:
+      - e44ceb6d-d919-4698-9bfd-23782cccc9ef
+      - 39d1e3b4-78e9-47db-b763-3648054c126d
+      nodeValues: []
+    updateOrder: 0
+  graphElementData:
+  - type: 5
+    uid: c28dbfc1-85ba-4fc0-b5e8-26bfe1e0c5a4
+    jsonData: '{"visible":true,"layout":{"serializedVersion":"2","x":10.0,"y":130.0,"width":255.0,"height":205.0}}'
+  version: 1.0.0
+  showAssembly: 0
